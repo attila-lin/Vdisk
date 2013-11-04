@@ -20,22 +20,22 @@ http = httplib2.Http('.cache')
 
 def authorize():
 	authorizeurl = 'https://auth.sina.com.cn/oauth2/authorize?client_id=1734683723&redirect_uri=http://10.214.9.220/&response_type=token'
-	
+
 	# headers = {}
 	# headers['Content-Type'] = 'text/html,application/xhtml+xml,application/xml'
 	# response, content = http.request(authorizeurl, 'GET', headers=headers)
 	# print response
 
 	webbrowser.open(authorizeurl)
-	
+
 	#print content
 
 
 def access_token():
-	gettokenurl = 'https://auth.sina.com.cn/oauth2/access_token' 
+	gettokenurl = 'https://auth.sina.com.cn/oauth2/access_token'
 
 	body = {
-		'client_id': client_id, 
+		'client_id': client_id,
 		'client_secret': client_secret,
 		'grant_type': 'refresh_token',
 	}
