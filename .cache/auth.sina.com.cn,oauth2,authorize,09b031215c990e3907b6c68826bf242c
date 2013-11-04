@@ -1,0 +1,111 @@
+status: 200
+content-length: 1826
+pragma: no-cache
+set-cookie: U_TRS1=0000005d.7d9c5c14.519c7c1a.21896e9c; path=/;
+ expires=Sat, 20-May-23 08:04:42 GMT;
+ domain=.sina.com.cn, U_TRS2=0000005d.7da95c14.519c7c1a.7052a3ee; path=/;
+ domain=.sina.com.cn, SSOLoginState=deleted;
+ expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/;
+ domain=.sina.com.cn, ALF=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT;
+ path=/; domain=.sina.com.cn
+expires: Wed, 22 May 2013 08:06:42 GMT
+sina-lb: eGQxMTUuaGEueGQxLmJqLmxvYWRiYWxhbmNlLnNpbg==
+server: Apache
+connection: close
+sina-ts: MjVmNGU1Y2UgMzMgMzMgMCA4IDUK
+dpool_header: 10.55.22.212
+cache-control: max-age=120
+date: Wed, 22 May 2013 08:04:42 GMT
+p3p: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC
+ NOI DSP COR"
+content-type: text/html
+content-location: https://auth.sina.com.cn/oauth2/authorize
+
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>应用授权 - 新浪</title>
+<link type="text/css" href="https://auth.sina.com.cn/oauth2/style/vdisk/css/oauth_web.css" rel="stylesheet" />
+<style type="text/css">
+.common_error_container
+{
+	width:100%;
+	
+	padding-left:150px;
+	_padding-left:200px;
+	padding-top:60px
+}
+.common_error_img
+{
+	background: url("https://auth.sina.com.cn/oauth2/style/vdisk/images/mobile/error.png");
+	float:left;
+	display:block;
+	width:37px;
+	height:50px;
+}
+.common_error_content
+{
+	padding-left:8px;
+	width:60%;
+	height:120px;
+	line-height:20px;
+	overflow:hidden;
+	padding-top:0px;
+	font-size:16px;
+	float:left;
+	text-align:left;
+}
+.content_error
+{
+	font-size:13px;
+	font-weight:bold;
+	color:black;
+}
+.content_connect
+{
+	font-size:12px;
+	line-height:22px;
+}
+.content_error_code
+{
+	font-size:12px;
+	line-height:22px;
+}
+</style>
+</head>
+
+
+<body class="WB_UIbody WB_widgets">
+
+ <div class="oauth_wrap" style='margin-top:40px;'>
+    <div class="oauth_header">
+      <img src='https://auth.sina.com.cn/oauth2/style/vdisk/images/logo_home.gif' />
+	   <p class="login_account">
+		<span class="account_name"></span>
+		
+	</p>
+	</div>
+	<div class="WB_panel oauth_main" >
+		<div class="oauth_content" style='height:250px;'>
+
+		<div class='common_error_container'>
+		<div class='common_error_img'></div>
+		<div class='common_error_content'>
+		
+		<div class="common_error_content">
+		<p class='content_error'>访问出错啦！</p>
+				<p class='content_connect'>您所访问的站点与新浪连接失败。<br>请稍后再试。</p>
+				<p class='content_error_code'>(error:参数异常)</p></div>
+		</div>
+		</div>
+
+		</div>
+	</div>
+ </div>
+
+<div id="setc" > 
+</div>
+<div class="WB_UIplus"></div>
+</body>
+</html>

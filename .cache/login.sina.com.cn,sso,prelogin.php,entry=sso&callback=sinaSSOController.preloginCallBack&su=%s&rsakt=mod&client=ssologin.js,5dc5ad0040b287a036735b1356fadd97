@@ -1,0 +1,23 @@
+status: 200
+content-length: 441
+pragma: no-cache
+set-cookie: U_TRS1=0000001d.5c3e51bf.519c9e4e.9f82882c; path=/;
+ expires=Sat, 20-May-23 10:30:38 GMT;
+ domain=.sina.com.cn, U_TRS2=0000001d.5c4c51bf.519c9e4e.10ef8bf7; path=/;
+ domain=.sina.com.cn
+expires: Wed, 22 May 2013 10:32:38 GMT
+vary: Accept-Encoding
+sina-lb: eWYyMDUuaGEueWZncm91cDEuYmoubG9hZGJhbGFuYw==
+server: Apache
+connection: close
+-content-encoding: gzip
+dpool_header: 10.79.80.37
+cache-control: no-cache
+date: Wed, 22 May 2013 10:30:38 GMT
+p3p: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC
+ NOI DSP COR"
+content-type: text/html
+content-location: http://login.sina.com.cn/sso/prelogin.php?entry=sso&callback=sinaSSOController.preloginCallBack&su=%s&rsakt=mod&client=ssologin.js
+-varied-accept-encoding: gzip, deflate
+
+sinaSSOController.preloginCallBack({"retcode":0,"servertime":1369218638,"pcid":"yf-68719700ad462e4410eaa77a4f59b53eddaf","nonce":"Q1XM8O","pubkey":"EB2A38568661887FA180BDDB5CABD5F21C7BFD59C090CB2D245A87AC253062882729293E5506350508E7F9AA3BB77F4333231490F915F6D63C55FE2F08A49B353F444AD3993CACC02DB784ABBB8E42A9B1BBFFFB38BE18D78E87A0E41B9B8F73A928EE0CCEE1F6739884B9777E4FE9E88A1BBE495927AC4A799B3181D6442443","rsakv":"1330428213","exectime":1})

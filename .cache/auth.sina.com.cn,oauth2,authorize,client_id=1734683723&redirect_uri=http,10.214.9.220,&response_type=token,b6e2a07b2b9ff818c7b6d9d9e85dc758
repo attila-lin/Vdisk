@@ -1,0 +1,133 @@
+status: 200
+content-length: 5488
+pragma: no-cache
+set-cookie: U_TRS1=0000005d.7e4e1482.519ca932.e83f4b12; path=/;
+ expires=Sat, 20-May-23 11:17:06 GMT;
+ domain=.sina.com.cn, U_TRS2=0000005d.7e5b1482.519ca932.c84e5c64; path=/;
+ domain=.sina.com.cn, SSOLoginState=deleted;
+ expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/;
+ domain=.sina.com.cn, ALF=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT;
+ path=/; domain=.sina.com.cn
+expires: Wed, 22 May 2013 11:19:06 GMT
+sina-lb: eGQxMTUuaGEueGQxLmJqLmxvYWRiYWxhbmNlLnNpbg==
+server: Apache
+connection: close
+sina-ts: NjlmNGU1Y2UgMzQgMzUgMCA3IDI3Cg==
+dpool_header: 10.55.22.152
+cache-control: max-age=120
+date: Wed, 22 May 2013 11:17:06 GMT
+p3p: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC
+ NOI DSP COR"
+content-type: text/html
+content-location: https://auth.sina.com.cn/oauth2/authorize?client_id=1734683723&redirect_uri=http://10.214.9.220/&response_type=token
+
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>应用授权 - 新浪微盘</title>
+<link type="text/css" href="https://auth.sina.com.cn/oauth2/style/vdisk/css/oauth_web.css" rel="stylesheet" />
+<script src="https://auth.sina.com.cn/oauth2/style/vdisk/js/gaea_1_19.js?version=1369220400" type="text/javascript" ></script>
+<script type="text/javascript" charset="utf-8" src="https://login.sina.com.cn/js/sso/ssologin.js?version=1369220400"></script>
+
+<script type="text/javascript">
+var $CONFIG = {};
+$CONFIG.logout_method = 'GET';
+
+</script>
+</head>
+
+<body class="WB_UIbody WB_widgets">
+
+ <div class="oauth_wrap" id="authz_form">
+    <div class="oauth_header clearfix">
+      <h1 class="WB_logo" title="新浪微盘">新浪微盘</h1>
+      
+      <p class="login_account">
+      		</p>
+      
+      	</div>
+    <!-- 带头像  -->
+    <div class="WB_panel oauth_main">
+      <div class="oauth_content">
+
+        <p class="oauth_main_info">
+			授权  <a href="http://whatever1992.blog.163.com/"  target="_blank">linux_vdisk</a> 访问你的微盘帐号
+		，将允许应用进行以下操作：</p>
+        <div class="oauth_main_content clearfix">
+          <ul class="oauth_main_list">
+		  <li class="oauth_connect clearfix"><label class="oauth_txt" >获得你的微盘用户信息</label><input class="oauth_checkbox" type="checkbox" id="c1"  checked  disabled="true" ></li><li class="oauth_share clearfix"><label class="oauth_txt" >操作当前应用管辖的数据</label> <input class="oauth_checkbox" type="checkbox" id="c3"  checked  disabled="true" ></li><li class="oauth_achieve clearfix"><label class="oauth_txt" >操作你的微盘目录</label><input class="oauth_checkbox" type="checkbox" id="c1"  checked  disabled="true" ></li></ul>
+
+          <div class="oauth_main_show">
+            <div class="oauth_app">
+              <div class="oauth_app_logo">
+                <div class="mask"></div>
+                <img class="app_pic" src="http://vdisksina-vda.stor.appsina.com/beb595ecd81e09376002228c3e06e91f" alt="app"> </div>
+                <p class="oauth_app_caption">
+														开发者：林一宇<br/>
+																						</p>
+
+              <ul class="oauth_app_user">
+              </ul>
+            </div>
+          </div>
+        </div>
+       
+        <!-- 登录 -->
+        <div class="oauth_login clearfix" >
+	          <form action="authorize" method="post" node-type="form">
+				<input type='hidden' name="client_id" value="1734683723">
+<input type='hidden' name="response_type" value="token">
+<input type='hidden' name="redirect_uri" value="http://10.214.9.220/">
+<input type='hidden' name="state" value="">
+<input type='hidden' name="display" value="default">
+<input type="hidden" name="ab67fad1c4484423cc5482e805520bd1" value="7c7423bd4cf4b173f0d5f13ad7f3b8d3">
+<input type="hidden" name="77c0940bef15f20580a32cfa2256818f" value="4a9ab0ecaf5519cc051416fd18133d55">
+<input type="hidden" name="e33659f0a46cc9c2270b552d7ca83954" value="393c11f14bbc1f3f52d42338858ce765">
+<input type="hidden" name="e1cc067902a3154aa8af567d9078b67b" value="982d40f63644f03f2f267da0f3375e41">
+<input type="hidden" name="66f61ee89248bd42b3e88f5a0b71d9e0" value="a772a1001663372bd983debf58df53b2">
+
+<input type="hidden" name="regtime" value="1369221426">
+<input type="hidden" name="930fad5c16c0d1dc4e0408322356a5fd" value="6">				 					<div class="oauth_login_form">
+				            <p class="oauth_login_01" >
+				              <label class="oauth_input_label">帐号</label>
+				              <input type="text" class="WB_iptxt oauth_form_input" autocomplete="off" node-type="userid" name="userid" placeholder="请用你的新浪帐号登录"/>
+				            </p>
+				            <p>
+				              <label class="oauth_input_label">密码</label>
+				              <input type="password" class="WB_iptxt oauth_form_input" node-type="password" name="password" />
+				            </p>
+					</div>
+										</form>
+          <div class="oauth_login_submit">
+         
+          <br>
+           <p class="oauth_submit">
+              			  <input type="checkbox" class="oauth_form_checkbox"  node-type="login_weibo" id="login_weibo" name="login_weibo" value="login_weibo"/>
+              <label for="login_weibo">同时登录微博<a href="http://weibo.com/signup/signup.php" target="_blank">没有帐号？</a></label>
+            			</p>
+            <p class="oauth_formbtn"><a class="WB_btn_oauth formbtn_01" href="javascript:;" node-type="submit" action-type="submit"></a>
+            <a class="WB_btn_cancel" href="http://10.214.9.220/?code=21330&msg=user rejected your request."></a></p>
+            </div>
+			
+        </div>
+        <!-- /登录 --> 
+      </div>
+    </div>
+    <!-- /带头像 -->
+    <p class="oauth_tiptxt">提示：为保障帐号安全，请认准本页URL地址必须以 auth.sina.com 开头</p>
+  </div>
+<div id="setc" >
+
+</div>
+<!-- 提示tips  -->
+
+<div style="position: absolute; top: 255.5px; left: 439.5px; width: 200px; display:none;" id="cs" class="WB_tips_yls">
+</div>
+
+<!-- /提示tips  -->
+<div class="WB_UIplus"></div>
+<script type="text/javascript" charset="utf-8" src="https://auth.sina.com.cn/oauth2/style/vdisk/js/zh-cn.js?version=1369220400"></script>
+<script type="text/javascript" charset="utf-8" src="https://auth.sina.com.cn/oauth2/style/vdisk/js/authorize.js?version=1369220400"></script>
+</body>
+</html>
