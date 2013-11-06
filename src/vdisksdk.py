@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # encoding: utf-8
-# author: cookpan001
 import sys
 import logging
 import time
