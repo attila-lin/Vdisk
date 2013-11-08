@@ -41,23 +41,32 @@ class Shell(wx.Frame):
             
     '''
     def __init__(self, parent, id):
-        wx.Frame.__init__(self, parent, id, 'Vdisk',size=(850, 420))
+        wx.Frame.__init__(self, parent, id, 'Vdisk',size=(350, 420))
         self.panel = wx.Panel(self)
 
         self.sizer = wx.BoxSizer(wx.VERTICAL)
 
         self.firststep = wx.StaticBox(self.panel, label = "第一步" )
         self.FirstSizer = wx.StaticBoxSizer(self.firststep, wx.VERTICAL) 
-        self.checkbutton = wx.Button(self.panel, label = "验证", pos = (170, 100), size = (50, 30))
+        self.checkbutton = wx.Button(self.panel, label = "验证", size = (50, 30))
         self.FirstSizer.Add(self.checkbutton)
 
         self.secondstep = wx.StaticBox(self.panel, label = "第二步" )
         self.SecondSizer = wx.StaticBoxSizer(self.secondstep, wx.VERTICAL)
-        self.setPathbutton = wx.Button(self.panel, label = "设置路径", pos = (170, 200), size = (100, 30))
+        self.setPathbutton = wx.Button(self.panel, label = "设置路径", size = (100, 30))
+        self.pathText = wx.TextCtrl(self.panel, -1, "", size=(300,30))
         self.SecondSizer.Add(self.setPathbutton)
+        self.SecondSizer.Add(self.pathText)
+
+        self.thirdstep = wx.StaticBox(self.panel, label = "第三步" )
+        self.ThirdSizer = wx.StaticBoxSizer(self.thirdstep, wx.VERTICAL)
+        self.setOKbutton = wx.Button(self.panel, label = "启用Vdisk，并将云端文件下载到本地", size = (250, 30))
+        
+        self.ThirdSizer.Add(self.setOKbutton)
 
         self.sizer.Add(self.FirstSizer, proportion=1, flag=wx.ALL|wx.EXPAND, border=2)
         self.sizer.Add(self.SecondSizer, proportion=1, flag=wx.ALL|wx.EXPAND, border=2)
+        self.sizer.Add(self.ThirdSizer, proportion=1, flag=wx.ALL|wx.EXPAND, border=2)
 
         self.panel.SetSizer(self.sizer)
 
@@ -70,14 +79,12 @@ class Shell(wx.Frame):
         weburl = Vfunc.geturl(myid)
         Vfunc.openbrowser(weburl)
         
-
-
         dlg = CheckDialog(parent = None, message = "是否验证成功，如果成功请按确定，如果失败请按失败")
         if dlg.ShowModal() == wx.ID_YES:
-            # self.Close(True)
             mycode = Vfunc.getcode(myid)
             acc_access_val, acc_expire_val, acc_uid_val, acc_refresh_token = Vfunc.getaccess(mycode)
             client = Vfunc.getClient(acc_access_val)
+            self.firststep.SetBackgroundColour('GREEN')
         dlg.Destroy()
 
     def SetPath(self, event):
@@ -94,8 +101,10 @@ class Shell(wx.Frame):
                             # pos=DefaultPosition, size=DefaultSize, name=DirDialogNameStr
                             )
         if dlg.ShowModal() == wx.ID_OK:
-            self.filename = dlg.GetPath()
-            # self.SetTitle(self.title + '--' + self.filename)
+            self.dirpath = dlg.GetPath()
+            self.pathText.AppendText(self.dirpath)
+            self.secondstep.SetBackgroundColour('GREEN')
+            print self.dirpath
             dlg.Destroy()
 
 
