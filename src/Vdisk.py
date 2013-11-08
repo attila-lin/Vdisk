@@ -4,14 +4,14 @@
 import sys
 import time
 import os
+import wx
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-
-import wx
-
 import Vfunc 
+
+
 
 class CheckDialog(wx.MessageDialog):
     """docstring for ClassName"""
@@ -31,6 +31,8 @@ class CheckDialog(wx.MessageDialog):
 
 #         self.beginlabel = wx.StaticText(self.panel, -1, "Begin:", (70, 20))
 #         self.begintext = wx.TextCtrl(self.panel, -1, style=wx.TE_LEFT, pos=(140, 20))  
+
+
 
 
 
@@ -72,6 +74,7 @@ class Shell(wx.Frame):
 
         self.Bind(wx.EVT_BUTTON, self.Check, self.checkbutton)
         self.Bind(wx.EVT_BUTTON, self.SetPath, self.setPathbutton)
+        self.Bind(wx.EVT_BUTTON, self.Save2Path, self.setOKbutton)
 
 
     def Check(self, event):
@@ -82,15 +85,15 @@ class Shell(wx.Frame):
         dlg = CheckDialog(parent = None, message = "是否验证成功，如果成功请按确定，如果失败请按失败")
         if dlg.ShowModal() == wx.ID_YES:
             mycode = Vfunc.getcode(myid)
-            acc_access_val, acc_expire_val, acc_uid_val, acc_refresh_token = Vfunc.getaccess(mycode)
-            client = Vfunc.getClient(acc_access_val)
+            Vfunc.ACCESSVAL, Vfunc.ACCEXPIRE, Vfunc.ACCUID, Vfunc.ACCFRESH = Vfunc.getaccess(mycode)
+            Vfunc.saveattributes( Vfunc.ACCESSVAL, Vfunc.ACCEXPIRE, Vfunc.ACCFRESH)
+            Vfunc.CLIENT = Vfunc.getClient()
             self.firststep.SetBackgroundColour('GREEN')
         dlg.Destroy()
 
+
     def SetPath(self, event):
-        print "setPath"
-        # setpathframe = SetPathFrame(parent=None, id=-1)
-        # setpathframe.Show()
+        # print "SetPath()"
         file_wildcard = "Paint files(*.paint)|*.paint|All files(*.*)|*.*" 
         # 选择文件夹
         dlg = wx.DirDialog(
@@ -107,7 +110,15 @@ class Shell(wx.Frame):
             print self.dirpath
             dlg.Destroy()
 
-
+    def Save2Path(self, event):
+        info = Vfunc.CLIENT.account_info(Vfunc.ACCESSVAL)
+        print Vfunc.ACCESSVAL
+        print info
+        # for test,have to use sandbox
+        Vfunc.CLIENT.setRoot("sandbox")
+        # print Vfunc.CLIENT.delta(Vfunc.ACCESSVAL)
+       
+        
 
 if __name__ == '__main__':
     app = wx.PySimpleApp()
