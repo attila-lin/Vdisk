@@ -19,22 +19,16 @@ class CheckDialog(wx.MessageDialog):
         wx.MessageDialog.__init__(self, parent, message, caption="验证", style= wx.YES_NO|wx.ICON_QUESTION)
        
 
-# class SetPathFrame(wx.Frame):
-#     '''
-#     SetPathFrame
-#         组成有：
+import threading
+class MyThread(threading.Thread):
+    def run(self):
+        # begin to do 
+        while(True):
+            print 'MyThread extended from Thread'
             
-#     '''
-#     def __init__(self, parent, id):
-#         wx.Frame.__init__(self, parent, id, '设置路径',size=(300, 200))
-#         self.panel = wx.Panel(self)
 
-#         self.beginlabel = wx.StaticText(self.panel, -1, "Begin:", (70, 20))
-#         self.begintext = wx.TextCtrl(self.panel, -1, style=wx.TE_LEFT, pos=(140, 20))  
-
-
-
-
+            # 普通授权：30 次/分钟
+            time.sleep(5)
 
 class Shell(wx.Frame):
     '''
@@ -99,7 +93,7 @@ class Shell(wx.Frame):
         dlg = wx.DirDialog(
                             None, 
                             message="请选择Vdisk的目录", 
-                            defaultPath="", 
+                            defaultPath="/home/whatever/Dropbox/code/VDISK/test", 
                             style=wx.DD_DEFAULT_STYLE, 
                             # pos=DefaultPosition, size=DefaultSize, name=DirDialogNameStr
                             )
@@ -117,6 +111,9 @@ class Shell(wx.Frame):
         # for test,have to use sandbox
         Vfunc.CLIENT.setRoot("sandbox")
         # print Vfunc.CLIENT.delta(Vfunc.ACCESSVAL)
+        t = MyThread()
+        t.start()
+        self.Destroy()
        
         
 
