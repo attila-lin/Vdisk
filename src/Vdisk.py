@@ -24,7 +24,8 @@ class MyThread(threading.Thread):
     def run(self):
         # begin to do 
         while(True):
-            print 'MyThread extended from Thread'
+            # print 'MyThread extended from Thread'
+            
             
 
             # 普通授权：30 次/分钟
