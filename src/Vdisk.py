@@ -11,8 +11,6 @@ sys.setdefaultencoding('utf-8')
 
 import Vfunc 
 
-
-
 class CheckDialog(wx.MessageDialog):
     """docstring for ClassName"""
     def __init__(self, parent, message):
@@ -23,13 +21,25 @@ import threading
 class MyThread(threading.Thread):
     def run(self):
         # begin to do 
-        while(True):
+        # 
+        import monitor
+        notifier = Notifier(wm, PFilePath())
+        wdd = wm.add_watch('.', mask, rec=True)
+     
+        while True:
             # print 'MyThread extended from Thread'
-            
-            
+            try :
+                notifier.process_events()
+                if notifier.check_events():
+                    notifier.read_events()
+            except KeyboardInterrupt:
+                notifier.stop()
+                break
 
             # 普通授权：30 次/分钟
             time.sleep(5)
+            
+            
 
 class Shell(wx.Frame):
     '''
