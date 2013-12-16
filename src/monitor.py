@@ -28,7 +28,6 @@ class PFilePath(ProcessEvent):
         print   "Modify file: %s " %   os.path.join(event.path, event.name)
         sendmessage("Modify file", os.path.join(event.path, event.name))
      
-
 if __name__ == "__main__":
      
     notifier = Notifier(wm, PFilePath())

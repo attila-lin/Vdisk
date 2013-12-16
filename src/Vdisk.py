@@ -11,23 +11,26 @@ sys.setdefaultencoding('utf-8')
 
 import Vfunc 
 
+dirpath = ''
+
 class CheckDialog(wx.MessageDialog):
     """docstring for ClassName"""
     def __init__(self, parent, message):
         wx.MessageDialog.__init__(self, parent, message, caption="验证", style= wx.YES_NO|wx.ICON_QUESTION)
-       
+
 
 import threading
+from monitor import *
 class MyThread(threading.Thread):
     def run(self):
-        # begin to do 
-        # 
-        import monitor
+
+        # 监控开始 
+        # print dirpath
         notifier = Notifier(wm, PFilePath())
-        wdd = wm.add_watch('.', mask, rec=True)
-     
+        wdd = wm.add_watch(dirpath, mask, rec=True)
+
         while True:
-            # print 'MyThread extended from Thread'
+            print 'MyThread extended from Thread'
             try :
                 notifier.process_events()
                 if notifier.check_events():
@@ -110,6 +113,8 @@ class Shell(wx.Frame):
                             )
         if dlg.ShowModal() == wx.ID_OK:
             self.dirpath = dlg.GetPath()
+            dirpath = self.dirpath
+            print dirpath
             self.pathText.AppendText(self.dirpath)
             self.secondstep.SetBackgroundColour('GREEN')
             print self.dirpath
@@ -125,9 +130,7 @@ class Shell(wx.Frame):
         t = MyThread()
         t.start()
         self.Destroy()
-       
-        
-
+    
 if __name__ == '__main__':
     app = wx.PySimpleApp()
     frame = Shell(parent=None, id=-1)
